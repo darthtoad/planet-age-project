@@ -26,4 +26,9 @@ describe('Calculator', function(){
     let newCalc = new Calculator("06-15-1987");
     expect(newCalc.calculateAgeJupiter() instanceof Number);
   })
+
+  it ('should return life expectancy in Mercury years', function(){
+    let newCalc = new Calculator("06-15-1987");
+    expect(newCalc.calculateMercuryLifeExpectancy(81) > 50).toBe(true);
+  })
 })

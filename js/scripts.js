@@ -1,4 +1,5 @@
 export class Calculator {
+
   constructor(age) {
     this.age = age;
   }
@@ -13,6 +14,13 @@ export class Calculator {
     return mercuryYear;
   }
 
+  calculateMercuryLifeExpectancy(expectancy) {
+    let age = this.calculateAgeMercury();
+    let expectancyYear = parseFloat(expectancy) / .24;
+    let yearsLeft = expectancyYear - age;
+    return yearsLeft;
+  }
+
   calculateAgeVenus() {
     console.log(this.age);
     let ms = new Date(this.age);
@@ -21,6 +29,13 @@ export class Calculator {
     let venusNumber = parseFloat(ageNumber) / .62;
     let venusYear = venusNumber / 31536000000;
     return venusYear;
+  }
+
+  calculateVenusLifeExpectancy(expectancy) {
+    let age = this.calculateAgeVenus();
+    let expectancyYear = parseFloat(expectancy) / .62;
+    let yearsLeft = expectancyYear - age;
+    return yearsLeft;
   }
 
   calculateAgeMars() {
@@ -33,6 +48,13 @@ export class Calculator {
     return marsYear;
   }
 
+  calculateMarsLifeExpectancy(expectancy) {
+    let age = this.calculateAgeMercury();
+    let expectancyYear = parseFloat(expectancy) / 1.88;
+    let yearsLeft = expectancyYear - age;
+    return yearsLeft;
+  }
+
   calculateAgeJupiter() {
     console.log(this.age);
     let ms = new Date(this.age);
@@ -41,6 +63,13 @@ export class Calculator {
     let jupiterNumber = parseFloat(ageNumber) / 11.86;
     let jupiterYear = jupiterNumber / 31536000000;
     return jupiterYear;
+  }
+
+  calculateJupiterLifeExpectancy(expectancy) {
+    let age = this.calculateAgeJupiter();
+    let expectancyYear = parseFloat(expectancy) / 11.86;
+    let yearsLeft = expectancyYear - age;
+    return yearsLeft;
   }
 
 }
