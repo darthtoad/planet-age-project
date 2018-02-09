@@ -2,17 +2,17 @@ export class Calculator {
   constructor(age) {
     this.age = age;
   }
-  //
-  // calculateAgeMercury() {
-  //   console.log(this.age);
-  //   let ms = new Date(this.age);
-  //   console.log(ms);
-  //   let ageNumber = ms.getTime();
-  //   let mercuryNumber = parseFloat(ageNumber) / .24;
-  //   let mercuryYear = mercuryNumber / 31536000000;
-  //   return mercuryYear;
-  // }
-  //
+
+  calculateAgeMercury() {
+    console.log(this.age);
+    let ms = new Date(this.age);
+    console.log(ms);
+    let ageNumber = ms.getTime();
+    let mercuryNumber = parseFloat(ageNumber) / .24;
+    let mercuryYear = mercuryNumber / 31536000000;
+    return mercuryYear;
+  }
+
   // calculateAgeVenus() {
   //   console.log(this.age);
   //   let ms = new Date(this.age);

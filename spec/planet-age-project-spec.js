@@ -6,4 +6,9 @@ describe('Calculator', function(){
     let newCalc = new Calculator("06-15-1987");
     expect(newCalc instanceof Calculator);
   })
+
+  it ('should calculate age in Mercury years', function(){
+    let newCalc = new Calculator("06-15-1987");
+    expect(newCalc.calculateAgeMercury() instanceof Number);
+  })
 })
