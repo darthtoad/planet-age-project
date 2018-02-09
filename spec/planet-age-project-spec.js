@@ -16,12 +16,12 @@ describe('Calculator', function(){
     let newCalc = new Calculator("06-15-1987");
     expect(newCalc.calculateAgeVenus() instanceof Number);
   })
-  //
-  // it ('should calculate age in Mars years', function(){
-  //   let newCalc = new Calculator("06-15-1987");
-  //   expect(newCalc.calculateAgeMars() instanceof Number);
-  // })
-  //
+  
+  it ('should calculate age in Mars years', function(){
+    let newCalc = new Calculator("06-15-1987");
+    expect(newCalc.calculateAgeMars() instanceof Number);
+  })
+
   // it ('should calculate age in Jupiter years', function(){
   //   let newCalc = new Calculator("06-15-1987");
   //   expect(newCalc.calculateAgeJupiter() instanceof Number);

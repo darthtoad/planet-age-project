@@ -23,16 +23,16 @@ export class Calculator {
     return venusYear;
   }
 
-  // calculateAgeMars() {
-  //   console.log(this.age);
-  //   let ms = new Date(this.age);
-  //   console.log(ms);
-  //   let ageNumber = ms.getTime();
-  //   let marsNumber = parseFloat(ageNumber) / 1.88;
-  //   let marsYear = marsNumber / 31536000000;
-  //   return marsYear;
-  // }
-  //
+  calculateAgeMars() {
+    console.log(this.age);
+    let ms = new Date(this.age);
+    console.log(ms);
+    let ageNumber = ms.getTime();
+    let marsNumber = parseFloat(ageNumber) / 1.88;
+    let marsYear = marsNumber / 31536000000;
+    return marsYear;
+  }
+
   // calculateAgeJupiter() {
   //   console.log(this.age);
   //   let ms = new Date(this.age);
