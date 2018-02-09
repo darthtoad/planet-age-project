@@ -33,14 +33,14 @@ export class Calculator {
     return marsYear;
   }
 
-  // calculateAgeJupiter() {
-  //   console.log(this.age);
-  //   let ms = new Date(this.age);
-  //   console.log(ms);
-  //   let ageNumber = ms.getTime();
-  //   let jupiterNumber = parseFloat(ageNumber) / 11.86;
-  //   let jupiterYear = jupiterNumber / 31536000000;
-  //   return jupiterYear;
-  // }
+  calculateAgeJupiter() {
+    console.log(this.age);
+    let ms = new Date(this.age);
+    console.log(ms);
+    let ageNumber = ms.getTime();
+    let jupiterNumber = parseFloat(ageNumber) / 11.86;
+    let jupiterYear = jupiterNumber / 31536000000;
+    return jupiterYear;
+  }
 
 }
