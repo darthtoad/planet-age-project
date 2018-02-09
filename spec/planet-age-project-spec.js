@@ -31,4 +31,9 @@ describe('Calculator', function(){
     let newCalc = new Calculator("06-15-1987");
     expect(newCalc.calculateMercuryLifeExpectancy(81) > 50).toBe(true);
   })
+
+  it ('should return life expectancy in Venus years', function(){
+    let newCalc = new Calculator("06-15-1987");
+    expect(newCalc.calculateVenusLifeExpectancy(81) > 50).toBe(true);
+  })
 })
