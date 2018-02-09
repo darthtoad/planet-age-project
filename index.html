@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <script src="build/js/vendor.min.js"></script>
+    <script type="text/javascript" src="build/js/app.js"></script>
+    <link href="build/css/vendor.css" rel="stylesheet" type="text/css">
+    <title>Poop</title>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <span title="See, we're humans!"><img src="img/humans.jpg" alt="A picture of humans who are definitely not aliens pretending to be human"></span>
+      <h1>Welcome to our age checker</h1>
+      <h2>Made by real humans</h2>
+      <h3>Who were definitely not slaves</h3>
+      <h4>We promise</h4>
+      <form id="birthday">
+        Please enter your date of birth, Earthling!
+        <input type="date" id="bday" name="bday"><br>
+        Which planet would you like to check?
+        <div id="planet">
+          <input type="radio" name="planet" value="Mercury"> Mercury<br>
+          <input type="radio" name="planet" value="Venus"> Venus<br>
+          <input type="radio" name="planet" value="Mars"> Mars<br>
+          <input type="radio" name="planet" value="Jupiter"> Jupiter<br>
+        </div>
+        <button type="submit">CHECK YOUR AGE, HUMAN!</button>
+      </form>
+      <div id="result">
+      </div>
+    </div>
+  </body>
+</html>
