@@ -36,7 +36,7 @@ gulp.task('bowerCSS', function () {
 
 gulp.task('cssBuild', function() {
   gulp.src(['css/*.css'])
-  .pipe(concat('vendor.css'))
+  .pipe(concat('app.css'))
   .pipe(gulp.dest('./build/css'))
 });
 
