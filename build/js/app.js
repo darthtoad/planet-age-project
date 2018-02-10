@@ -38,6 +38,13 @@ var Calculator = exports.Calculator = function () {
       return yearsLeft;
     }
   }, {
+    key: "calculateNextBirthdayMercury",
+    value: function calculateNextBirthdayMercury() {
+      var age = this.calculateAgeMercury() - Math.floor(this.calculateAgeMercury());
+      console.log(age);
+      return 88 * (1 - age);
+    }
+  }, {
     key: "calculateAgeVenus",
     value: function calculateAgeVenus() {
       var ms = new Date(this.age);
@@ -56,6 +63,12 @@ var Calculator = exports.Calculator = function () {
       var yearsLeft = expectancyYear - age;
       console.log("Venus: " + yearsLeft);
       return yearsLeft;
+    }
+  }, {
+    key: "calculateNextBirthdayVenus",
+    value: function calculateNextBirthdayVenus() {
+      var age = this.calculateAgeVenus() - Math.floor(this.calculateAgeVenus());
+      return 225 * (1 - age);
     }
   }, {
     key: "calculateAgeMars",
@@ -78,6 +91,12 @@ var Calculator = exports.Calculator = function () {
       return yearsLeft;
     }
   }, {
+    key: "calculateNextBirthdayMars",
+    value: function calculateNextBirthdayMars() {
+      var age = this.calculateAgeMars() - Math.floor(this.calculateAgeMars());
+      return 687 * (1 - age);
+    }
+  }, {
     key: "calculateAgeJupiter",
     value: function calculateAgeJupiter() {
       var ms = new Date(this.age);
@@ -96,6 +115,12 @@ var Calculator = exports.Calculator = function () {
       var yearsLeft = expectancyYear - age;
       console.log("Jupiter: " + yearsLeft);
       return yearsLeft;
+    }
+  }, {
+    key: "calculateNextBirthdayJupiter",
+    value: function calculateNextBirthdayJupiter() {
+      var age = this.calculateAgeJupiter() - Math.floor(this.calculateAgeJupiter());
+      return (1 - age) * 4300;
     }
   }]);
 
@@ -116,30 +141,34 @@ $(document).ready(function () {
     var birthdayDate = new _scripts.Calculator(birthdayString);
     console.log(birthdayDate.age);
     if ($("input:radio[name=planet]:checked").val() === "Mercury") {
-      $("#result").append("Your age is " + birthdayDate.calculateAgeMercury());
+      $("#result").append("Your age is " + birthdayDate.calculateAgeMercury() + ". ");
+      $("#result").append("You have " + birthdayDate.calculateNextBirthdayMercury() + " days until your next birthday");
       if (birthdayDate.calculateMercuryLifeExpectancy(expectancy) > 0) {
-        $("#result").append(" and you have " + birthdayDate.calculateMercuryLifeExpectancy(expectancy) + " years left");
+        $("#result").append(" and you have " + birthdayDate.calculateMercuryLifeExpectancy(expectancy) + " years left until you die, human.");
       } else {
         $("#result").append(" and you should be dead by now.");
       }
     } else if ($("input:radio[name=planet]:checked").val() === "Venus") {
-      $("#result").append("Your age is " + birthdayDate.calculateAgeVenus());
+      $("#result").append("Your age is " + birthdayDate.calculateAgeVenus() + ". ");
+      $("#result").append("You have " + birthdayDate.calculateNextBirthdayVenus() + " days until your next birthday");
       if (birthdayDate.calculateVenusLifeExpectancy(expectancy) > 0) {
-        $("#result").append(" and you have " + birthdayDate.calculateVenusLifeExpectancy(expectancy) + " years left");
+        $("#result").append(" and you have " + birthdayDate.calculateVenusLifeExpectancy(expectancy) + " years left until you die, human.");
       } else {
         $("#result").append(" and you should be dead by now.");
       }
     } else if ($("input:radio[name=planet]:checked").val() === "Mars") {
-      $("#result").append("Your age is " + birthdayDate.calculateAgeMars());
+      $("#result").append("Your age is " + birthdayDate.calculateAgeMars() + ". ");
+      $("#result").append("You have " + birthdayDate.calculateNextBirthdayMars() + " days until your next birthday");
       if (birthdayDate.calculateMarsLifeExpectancy(expectancy) > 0) {
-        $("#result").append(" and you have " + birthdayDate.calculateMarsLifeExpectancy(expectancy) + " years left");
+        $("#result").append(" and you have " + birthdayDate.calculateMarsLifeExpectancy(expectancy) + " years left until you die, human.");
       } else {
         $("#result").append(" and you should be dead by now.");
       }
     } else if ($("input:radio[name=planet]:checked").val() === "Jupiter") {
-      $("#result").append("Your age is " + birthdayDate.calculateAgeJupiter());
+      $("#result").append("Your age is " + birthdayDate.calculateAgeJupiter() + ". ");
+      $("#result").append("You have " + birthdayDate.calculateNextBirthdayJupiter() + " days until your next birthday");
       if (birthdayDate.calculateJupiterLifeExpectancy(expectancy) > 0) {
-        $("#result").append(" and you have " + birthdayDate.calculateJupiterLifeExpectancy(expectancy) + " years left");
+        $("#result").append(" and you have " + birthdayDate.calculateJupiterLifeExpectancy(expectancy) + " years left until you die, human.");
       } else {
         $("#result").append(" and you should be dead by now.");
       }

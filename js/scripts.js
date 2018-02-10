@@ -23,6 +23,12 @@ export class Calculator {
     return yearsLeft;
   }
 
+  calculateNextBirthdayMercury() {
+    let age = this.calculateAgeMercury() - Math.floor(this.calculateAgeMercury());
+    console.log(age);
+    return 88 * (1 - age);
+  }
+
   calculateAgeVenus() {
     let ms = new Date(this.age);
     let currentDate = new Date();
@@ -39,6 +45,11 @@ export class Calculator {
     let yearsLeft = expectancyYear - age;
     console.log("Venus: " + yearsLeft);
     return yearsLeft;
+  }
+
+  calculateNextBirthdayVenus() {
+    let age = this.calculateAgeVenus() - Math.floor(this.calculateAgeVenus());
+    return 225 * (1 - age);
   }
 
   calculateAgeMars() {
@@ -59,6 +70,11 @@ export class Calculator {
     return yearsLeft;
   }
 
+  calculateNextBirthdayMars() {
+    let age = this.calculateAgeMars() - Math.floor(this.calculateAgeMars());
+    return 687 * (1 - age);
+  }
+
   calculateAgeJupiter() {
     let ms = new Date(this.age);
     let currentDate = new Date();
@@ -75,6 +91,11 @@ export class Calculator {
     let yearsLeft = expectancyYear - age;
     console.log("Jupiter: " + yearsLeft);
     return yearsLeft;
+  }
+
+  calculateNextBirthdayJupiter() {
+    let age = this.calculateAgeJupiter() - Math.floor(this.calculateAgeJupiter());
+    return (1 - age) * 4300;
   }
 
 }
