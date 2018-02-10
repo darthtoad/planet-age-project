@@ -1,3 +1,9 @@
 h1 {
   color: green;
 }
+
+#result {
+  font-size: 30px;
+  background-color: lightblue;
+  color: darkorange;
+}

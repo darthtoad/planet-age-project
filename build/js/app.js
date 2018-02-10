@@ -19,46 +19,83 @@ var Calculator = exports.Calculator = function () {
   _createClass(Calculator, [{
     key: "calculateAgeMercury",
     value: function calculateAgeMercury() {
-      console.log(this.age);
       var ms = new Date(this.age);
-      console.log(ms);
-      var ageNumber = ms.getTime();
-      var mercuryNumber = parseFloat(ageNumber) / .24;
-      var mercuryYear = mercuryNumber / 31536000000;
+      var currentDate = new Date();
+      var ageNumber = currentDate.getTime() - ms.getTime();
+      console.log(ageNumber / 31557600000);
+      var mercuryNumber = parseFloat(ageNumber) / 0.24;
+      var mercuryYear = mercuryNumber / 31557600000;
+      console.log("Mercury: " + mercuryYear);
       return mercuryYear;
+    }
+  }, {
+    key: "calculateMercuryLifeExpectancy",
+    value: function calculateMercuryLifeExpectancy(expectancy) {
+      var age = this.calculateAgeMercury();
+      var expectancyYear = parseFloat(expectancy) / 0.24;
+      var yearsLeft = expectancyYear - age;
+      console.log("Mercury: " + yearsLeft);
+      return yearsLeft;
     }
   }, {
     key: "calculateAgeVenus",
     value: function calculateAgeVenus() {
-      console.log(this.age);
       var ms = new Date(this.age);
-      console.log(ms);
-      var ageNumber = ms.getTime();
-      var venusNumber = parseFloat(ageNumber) / .62;
-      var venusYear = venusNumber / 31536000000;
+      var currentDate = new Date();
+      var ageNumber = currentDate.getTime() - ms.getTime();
+      var venusNumber = parseFloat(ageNumber) / 0.62;
+      var venusYear = venusNumber / 31557600000;
+      console.log("Venus: " + venusYear);
       return venusYear;
+    }
+  }, {
+    key: "calculateVenusLifeExpectancy",
+    value: function calculateVenusLifeExpectancy(expectancy) {
+      var age = this.calculateAgeVenus();
+      var expectancyYear = parseFloat(expectancy) / 0.62;
+      var yearsLeft = expectancyYear - age;
+      console.log("Venus: " + yearsLeft);
+      return yearsLeft;
     }
   }, {
     key: "calculateAgeMars",
     value: function calculateAgeMars() {
-      console.log(this.age);
       var ms = new Date(this.age);
-      console.log(ms);
-      var ageNumber = ms.getTime();
+      var currentDate = new Date();
+      var ageNumber = currentDate.getTime() - ms.getTime();
       var marsNumber = parseFloat(ageNumber) / 1.88;
-      var marsYear = marsNumber / 31536000000;
+      var marsYear = marsNumber / 31557600000;
+      console.log("Mars: " + marsYear);
       return marsYear;
+    }
+  }, {
+    key: "calculateMarsLifeExpectancy",
+    value: function calculateMarsLifeExpectancy(expectancy) {
+      var age = this.calculateAgeMars();
+      var expectancyYear = parseFloat(expectancy) / 1.88;
+      var yearsLeft = expectancyYear - age;
+      console.log("Mars: " + yearsLeft);
+      return yearsLeft;
     }
   }, {
     key: "calculateAgeJupiter",
     value: function calculateAgeJupiter() {
-      console.log(this.age);
       var ms = new Date(this.age);
-      console.log(ms);
-      var ageNumber = ms.getTime();
+      var currentDate = new Date();
+      var ageNumber = currentDate.getTime() - ms.getTime();
       var jupiterNumber = parseFloat(ageNumber) / 11.86;
-      var jupiterYear = jupiterNumber / 31536000000;
+      var jupiterYear = jupiterNumber / 31557600000;
+      console.log("Jupiter: " + jupiterYear);
       return jupiterYear;
+    }
+  }, {
+    key: "calculateJupiterLifeExpectancy",
+    value: function calculateJupiterLifeExpectancy(expectancy) {
+      var age = this.calculateAgeJupiter();
+      var expectancyYear = parseFloat(expectancy) / 11.86;
+      var yearsLeft = expectancyYear - age;
+      console.log("Jupiter: " + yearsLeft);
+      return yearsLeft;
     }
   }]);
 
@@ -75,16 +112,37 @@ $(document).ready(function () {
     event.preventDefault();
     $("#result").empty();
     var birthdayString = $('input[type="date"]').val();
+    var expectancy = $('input[type="number"]').val();
     var birthdayDate = new _scripts.Calculator(birthdayString);
     console.log(birthdayDate.age);
     if ($("input:radio[name=planet]:checked").val() === "Mercury") {
-      $("#result").append(birthdayDate.calculateAgeMercury());
+      $("#result").append("Your age is " + birthdayDate.calculateAgeMercury());
+      if (birthdayDate.calculateMercuryLifeExpectancy(expectancy) > 0) {
+        $("#result").append(" and you have " + birthdayDate.calculateMercuryLifeExpectancy(expectancy) + " years left");
+      } else {
+        $("#result").append(" and you should be dead by now.");
+      }
     } else if ($("input:radio[name=planet]:checked").val() === "Venus") {
-      $("#result").append(birthdayDate.calculateAgeVenus());
+      $("#result").append("Your age is " + birthdayDate.calculateAgeVenus());
+      if (birthdayDate.calculateVenusLifeExpectancy(expectancy) > 0) {
+        $("#result").append(" and you have " + birthdayDate.calculateVenusLifeExpectancy(expectancy) + " years left");
+      } else {
+        $("#result").append(" and you should be dead by now.");
+      }
     } else if ($("input:radio[name=planet]:checked").val() === "Mars") {
-      $("#result").append(birthdayDate.calculateAgeMars());
+      $("#result").append("Your age is " + birthdayDate.calculateAgeMars());
+      if (birthdayDate.calculateMarsLifeExpectancy(expectancy) > 0) {
+        $("#result").append(" and you have " + birthdayDate.calculateMarsLifeExpectancy(expectancy) + " years left");
+      } else {
+        $("#result").append(" and you should be dead by now.");
+      }
     } else if ($("input:radio[name=planet]:checked").val() === "Jupiter") {
-      $("#result").append(birthdayDate.calculateAgeJupiter());
+      $("#result").append("Your age is " + birthdayDate.calculateAgeJupiter());
+      if (birthdayDate.calculateJupiterLifeExpectancy(expectancy) > 0) {
+        $("#result").append(" and you have " + birthdayDate.calculateJupiterLifeExpectancy(expectancy) + " years left");
+      } else {
+        $("#result").append(" and you should be dead by now.");
+      }
     } else {
       alert("You have caused an error, you stupid human!");
     }
