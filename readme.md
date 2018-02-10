@@ -31,7 +31,7 @@ _This app allows a user to calculate what their age would be on other planets. F
 
 ## Known Bugs
 
-_There are currently no known bugs or issues. Please [message](mailto:darth.toad@gmail.com) me if you run into any and I'll do my best to fix them as quickly as possible!_
+_I cannot get bootstrap to concatenate to my vendor.css for the life of me. Please [message](mailto:darth.toad@gmail.com) me if you can help me fix this bug. If you run into any other bugs, I'll do my best to fix them as quickly as possible!_
 
 ## Support and contact details
 
