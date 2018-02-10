@@ -7,7 +7,6 @@ $(document).ready(function(){
     let birthdayString = $('input[type="date"]').val();
     let expectancy = $('input[type="number"]').val();
     const birthdayDate = new Calculator(birthdayString);
-    console.log(birthdayDate.age)
     if ($("input:radio[name=planet]:checked").val() === "Mercury") {
       $("#result").append(`Your age is ${birthdayDate.calculateAgeMercury()}. `);
       $("#result").append(`You have ${birthdayDate.calculateNextBirthdayMercury()} days until your next birthday`);

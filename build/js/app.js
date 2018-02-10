@@ -22,10 +22,8 @@ var Calculator = exports.Calculator = function () {
       var ms = new Date(this.age);
       var currentDate = new Date();
       var ageNumber = currentDate.getTime() - ms.getTime();
-      console.log(ageNumber / 31557600000);
       var mercuryNumber = parseFloat(ageNumber) / 0.24;
       var mercuryYear = mercuryNumber / 31557600000;
-      console.log("Mercury: " + mercuryYear);
       return mercuryYear;
     }
   }, {
@@ -34,14 +32,12 @@ var Calculator = exports.Calculator = function () {
       var age = this.calculateAgeMercury();
       var expectancyYear = parseFloat(expectancy) / 0.24;
       var yearsLeft = expectancyYear - age;
-      console.log("Mercury: " + yearsLeft);
       return yearsLeft;
     }
   }, {
     key: "calculateNextBirthdayMercury",
     value: function calculateNextBirthdayMercury() {
       var age = this.calculateAgeMercury() - Math.floor(this.calculateAgeMercury());
-      console.log(age);
       return 88 * (1 - age);
     }
   }, {
@@ -52,7 +48,6 @@ var Calculator = exports.Calculator = function () {
       var ageNumber = currentDate.getTime() - ms.getTime();
       var venusNumber = parseFloat(ageNumber) / 0.62;
       var venusYear = venusNumber / 31557600000;
-      console.log("Venus: " + venusYear);
       return venusYear;
     }
   }, {
@@ -61,7 +56,6 @@ var Calculator = exports.Calculator = function () {
       var age = this.calculateAgeVenus();
       var expectancyYear = parseFloat(expectancy) / 0.62;
       var yearsLeft = expectancyYear - age;
-      console.log("Venus: " + yearsLeft);
       return yearsLeft;
     }
   }, {
@@ -78,7 +72,6 @@ var Calculator = exports.Calculator = function () {
       var ageNumber = currentDate.getTime() - ms.getTime();
       var marsNumber = parseFloat(ageNumber) / 1.88;
       var marsYear = marsNumber / 31557600000;
-      console.log("Mars: " + marsYear);
       return marsYear;
     }
   }, {
@@ -87,7 +80,6 @@ var Calculator = exports.Calculator = function () {
       var age = this.calculateAgeMars();
       var expectancyYear = parseFloat(expectancy) / 1.88;
       var yearsLeft = expectancyYear - age;
-      console.log("Mars: " + yearsLeft);
       return yearsLeft;
     }
   }, {
@@ -104,7 +96,6 @@ var Calculator = exports.Calculator = function () {
       var ageNumber = currentDate.getTime() - ms.getTime();
       var jupiterNumber = parseFloat(ageNumber) / 11.86;
       var jupiterYear = jupiterNumber / 31557600000;
-      console.log("Jupiter: " + jupiterYear);
       return jupiterYear;
     }
   }, {
@@ -113,7 +104,6 @@ var Calculator = exports.Calculator = function () {
       var age = this.calculateAgeJupiter();
       var expectancyYear = parseFloat(expectancy) / 11.86;
       var yearsLeft = expectancyYear - age;
-      console.log("Jupiter: " + yearsLeft);
       return yearsLeft;
     }
   }, {
@@ -139,7 +129,6 @@ $(document).ready(function () {
     var birthdayString = $('input[type="date"]').val();
     var expectancy = $('input[type="number"]').val();
     var birthdayDate = new _scripts.Calculator(birthdayString);
-    console.log(birthdayDate.age);
     if ($("input:radio[name=planet]:checked").val() === "Mercury") {
       $("#result").append("Your age is " + birthdayDate.calculateAgeMercury() + ". ");
       $("#result").append("You have " + birthdayDate.calculateNextBirthdayMercury() + " days until your next birthday");
