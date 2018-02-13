@@ -20,6 +20,11 @@ _This app allows a user to calculate what their age would be on other planets. F
 | It can determine the life expectancy of a human on each planet | 10, Jupiter | "You have 5.80 years to live on Jupiter" |
 | It can account for people who have already surpassed their life expectancy | 100, Mars | "You are lucky to be alive" |
 
+## Wish List
+* Add more planets
+* Add ages for famous people
+* Add ages based on dog years, mayfly years, etc.
+
 ## Setup/Installation Requirements
 
 * Click on the following [link](https://github.com/darthtoad/Interplanetary-Age-Calculator) to download the Interplanetary Age Calculator

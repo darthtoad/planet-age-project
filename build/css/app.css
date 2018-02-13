@@ -19,3 +19,13 @@ body {
 #birthday {
   background-color: grey;
 }
+
+#mars {
+  height: 220px;
+  width: 220px;
+}
+
+#venus {
+  height: 43%;
+  width: 43%;
+}

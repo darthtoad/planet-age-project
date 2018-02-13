@@ -11,7 +11,7 @@
   <body>
     <div class="container-fluid">
       <div class="jumbotron">
-        <span title="See, we're humans!"><img src="img/humans.jpg" alt="A picture of humans who are definitely not aliens pretending to be human"></span>
+        <span title="See, we're humans!"><img src="img/humans.jpg" alt="A picture of humans who are definitely not aliens pretending to be human" /></span>
         <h1>Welcome to our age checker</h1>
         <h2>Made by real humans</h2>
         <h3>Who were definitely not slaves</h3>
@@ -24,11 +24,28 @@
         <input type="number" id="death" name="death" min="1" placeholder="80"><br>
         Which planet would you like to check?
         <div id="planet">
-          <input type="radio" name="planet" value="Mercury"> Mercury<br>
-          <input type="radio" name="planet" value="Venus"> Venus<br>
-          <input type="radio" name="planet" value="Mars"> Mars<br>
-          <input type="radio" name="planet" value="Jupiter"> Jupiter<br>
+          <div class="row">
+            <div class="col-md-5">
+              <span title="Mercury"><img src="img/mercury.jpg" alt="Mercury" /></span>
+              <input type="radio" name="planet" value="Mercury"> Mercury<br>
+            </div>
+            <div class="col-md-5">
+              <span title="Venus"><img src="img/venus.gif" alt="Venus" id="venus" /></span>
+              <input type="radio" name="planet" value="Venus" /> Venus<br>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-5">
+              <span title="Mars"><img src="img/mars.gif" alt="Mars" id="mars" /></span>
+              <input type="radio" name="planet" value="Mars"> Mars<br>
+            </div>
+            <div class="col-md-5">
+              <span title="Jupiter"><img src="img/jupiter.jpg" alt="Jupiter" /></span>
+              <input type="radio" name="planet" value="Jupiter"> Jupiter<br>
+            </div>
+          </div>
         </div>
+        <br>
         <button type="submit">CHECK YOUR AGE, HUMAN!</button>
       </form>
       <br>
