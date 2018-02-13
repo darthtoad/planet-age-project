@@ -27,7 +27,7 @@ _This app allows a user to calculate what their age would be on other planets. F
 
 ## Setup/Installation Requirements
 
-* Click on the following [link](https://github.com/darthtoad/Interplanetary-Age-Calculator) to download the Interplanetary Age Calculator
+* Click on the following [link](https://github.com/darthtoad/planet-age-project) to download the Interplanetary Age Calculator
 * Go to the directory you downloaded the Interplanetary Age Calculator in the terminal
 * Run npm install in the terminal
 * Run bower install in the terminal
